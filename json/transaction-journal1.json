@@ -1,0 +1,31 @@
+[
+  {
+          "idtransaction": "1",
+          "datetransaction": "2009-01-01", 
+          "inout": "Приход",
+          "typeoperation":"Поступления за товар",
+          "kontragent":"Ivan",
+          "sum":"13000",
+          "edit":false
+  },
+  {
+          "idtransaction": "2",
+          "datetransaction": "2010-02-02", 
+          "inout": "Приход",
+          "typeoperation":"Приход наличка",
+          "kontragent":"Illya",
+          "sum":"322",
+          "edit":false
+  },  
+  
+  {
+          "idtransaction": "3",
+          "datetransaction": "2011-03-03", 
+          "inout": "Приход",
+          "typeoperation":"Приход безналичка",
+          "kontragent":"Alesha",
+          "sum":"12333",
+          "edit":false
+  }
+
+]

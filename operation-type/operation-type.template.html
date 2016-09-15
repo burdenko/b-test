@@ -1,0 +1,30 @@
+
+<div class="logout"><a href="" ng-click="$ctrl.logout()">Logout</a></div>
+
+<h1>Типы операций</h1>
+<table class="a_table">
+    <tr>
+       <td class='field'>Название операции</td>
+    </tr>
+    <tr ng-repeat="operation in $ctrl.operations">
+        <td>
+            <input size="13" ng-show="operation.edit"  ng-model="operation.name" type="text"/> 
+            <span ng-hide="operation.edit">{{operation.name}}</span> 
+        </td>
+        <td>&nbsp;<a href="" ng-click="$ctrl.deleteOperation(operation)" ng-hide="$ctrl.hide">
+            <img src="/image/delete_16.png"/ title="Удалить запись">  </a>&nbsp;
+        </td>
+        <td>&nbsp;<a  href="" ng-click="$ctrl.editOperation(operation)" ng-hide="$ctrl.hide" >
+            <img src="image/pencil_16.png" title="Редактировать запись" /> </a>&nbsp;
+        </td>
+        <td><a  href="" ng-click="$ctrl.saveOperation(operation)" ng-show="operation.edit" >
+            <img src="image/save_16.png" title="Сохранить запись" /></a>
+        </td>
+    </tr>
+</table>
+<br />
+<a href="" ng-click="$ctrl.addNewJson(1)">Приходы</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" ng-click="$ctrl.addNewJson(2)">Расходы</a>
+<br />
+<br />
+<a href="" ng-click="$ctrl.addNewOperation()"><img src="/image/plus_16.png"/ title="Добвить новую запись"> Добавить новую запись</a>
+

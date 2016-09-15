@@ -1,0 +1,74 @@
+
+<div class="logout"><a href="" ng-click="$ctrl.logout()">Logout</a></div>
+<div class="search">Поиск по имени: <input ng-model="$ctrl.query" /></div>
+
+<div class="search">Поиск интервала даты рождения - From: 
+<input type="date" name="date1" ng-model="$ctrl.dateFrom" max="{{$ctrl.dateTo.toISOString().substring(0,10)}}"> &nbsp;&nbsp; To: 
+<input type="date" name="date2"  ng-model="$ctrl.dateTo" min="{{$ctrl.datePlus3($ctrl.dateFrom)}}">&nbsp;&nbsp; <input type="button" value="Поиск" ng-click="$ctrl.addNewJson(4)"> </div> 
+
+<h1>Контрагенты</h1>
+<table class="a_table">
+    <tr>
+        <td width="150"> <a href="" ng-click="$ctrl.sort('firstname')" >
+        <b>Имя<i class="glyphicon" ng-class="{'glyphicon-chevron-up': $ctrl.upFlag('firstname'),'glyphicon-chevron-down': $ctrl.downFlag('firstname')}"></i>
+        </b></a></td>
+        <td class='field'>Фамилия</td>
+        <td class='field'> e-mail</td>
+        <td class='field'>Телефон</td>
+        <td class='field'>День рождения</td>
+        <td>ID</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="agent in $ctrl.agents | filter:{firstname:$ctrl.query} | orderBy:$ctrl.sortFlag | limitTo : $ctrl.selectPangination : $ctrl.punginationStartNomber">
+        <td >
+            <input size="13" ng-show="agent.edit"  ng-model="agent.firstname" type="text"/> 
+            <span ng-hide="agent.edit">{{agent.firstname}}</span> 
+        </td>
+        <td>
+            <input size="13" ng-show="agent.edit"  ng-model="agent.lastname" type="text"/> 
+            <span ng-hide="agent.edit">{{agent.lastname}}</span> 
+        </td>
+        <td>
+            <input size="13" ng-show="agent.edit"  ng-model="agent.email" type="text"/> 
+            <span ng-hide="agent.edit">{{agent.email}}</span> 
+        </td>
+        <td>
+            <input size="13" ng-show="agent.edit"  ng-model="agent.phone" type="text"/> 
+            <span ng-hide="agent.edit">{{agent.phone}}</span>       
+        </td>
+        <td>
+            <input type="date"  ng-show="agent.edit"  ng-model="agent.birthday"/> 
+            <span ng-hide="agent.edit">{{$ctrl.transformationDate(agent.birthday)}}</span>       
+        </td>
+        <td>{{agent.idagent}}</td>
+
+        <td>&nbsp;<a href="" ng-click="$ctrl.deleteAgent(agent)" ng-hide="$ctrl.hide">
+            <img src="/image/delete_16.png"/ title="Удалить запись">  </a>&nbsp;
+        </td>
+        <td>&nbsp;<a  href="" ng-click="$ctrl.editAgent(agent)" ng-hide="$ctrl.hide" >
+            <img src="image/pencil_16.png" title="Редактировать запись" /> </a>&nbsp;
+        </td>
+        <td><a  href="" ng-click="$ctrl.saveAgent(agent)" ng-show="agent.edit" >
+            <img src="image/save_16.png" title="Сохранить запись" /></a>
+        </td>
+    </tr>
+</table>
+<br />
+
+<span  ng-repeat="pung in $ctrl.punginationNumber | limitTo : $ctrl.round" >
+   <a class="pung" href="" ng-click="$ctrl.punginationStart(pung.numb)" >{{pung.numb}}</a> &nbsp;
+</span>&nbsp;&nbsp;&nbsp;&nbsp;
+
+Отображать по: 
+<select ng-model="$ctrl.selectPangination" ng-change="$ctrl.rounding()">
+  <option>5</option>
+  <option>10</option>
+  <option>50</option>
+</select>
+
+<br />
+<br />
+<a href="" ng-click="$ctrl.addNewAgent()"><img src="/image/plus_16.png"/ title="Добвить новую запись"> Добавить новую запись</a>
+

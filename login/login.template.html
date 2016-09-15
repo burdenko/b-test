@@ -1,0 +1,14 @@
+<div class="logout"><a href="" ng-click="$ctrl.logout()" ng-show="$ctrl.loginShow">Logout</a></div>
+
+<div ng-show="!$ctrl.loginShow">
+  <h1>Получить доступ на сайт</h1>
+
+  <form name="formLogin">
+    <input class="text" placeholder="введите пароль"  size="25" ng-model="$ctrl.query">
+    <input type="button" value="Вход" ng-click="$ctrl.loginSite()">
+  </form>
+</div>
+
+<div ng-show="$ctrl.loginShow">
+  <h1>Добро пожаловать! Вход выполнен успешно!</h1>
+</div>

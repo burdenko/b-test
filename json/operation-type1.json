@@ -1,0 +1,28 @@
+[
+  {
+	"idoperation": "1",
+	"name": "Поступления за товар", 
+	"edit":false
+  },
+  {
+	"idoperation": "2",
+	"name": "Другие доходы", 
+	"edit":false
+  },  
+  
+  {
+	"idoperation": "3",
+	"name": "Приход наличка", 
+	"edit":false
+  }, 
+  {
+	"idoperation": "4",
+	"name": "Приход безналичка", 
+	"edit":false
+  }, 
+  {
+	"idoperation": "5",
+	"name": "Поступления от спонсоров", 
+	"edit":false
+  }
+]

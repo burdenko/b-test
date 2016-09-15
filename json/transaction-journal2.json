@@ -1,0 +1,31 @@
+[
+  {
+          "idtransaction": "4",
+          "datetransaction": "2001-01-01", 
+          "inout": "Расход",
+          "typeoperation":"Другие расходы",
+          "kontragent":"Ivan",
+          "sum":"45555",
+          "edit":false
+  },
+  {
+          "idtransaction": "5",
+          "datetransaction": "2002-02-02", 
+          "inout": "Расход",
+          "typeoperation":"На аммортизацию",
+          "kontragent":"Alesha",
+          "sum":"63345",
+          "edit":false
+  },  
+  
+  {
+          "idtransaction": "6",
+          "datetransaction": "2003-03-03", 
+          "inout": "Расход",
+          "typeoperation":"Расходы безнал",
+          "kontragent":"Ivan",
+          "sum":"234433",
+          "edit":false
+  }
+
+]

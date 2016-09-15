@@ -1,0 +1,69 @@
+
+<div class="logout"><a href="" ng-click="$ctrl.logout()">Logout</a></div>
+
+<h1>Журнал транзакций</h1>
+ <table class="a_table">
+ <tr>
+        <td class='field'>Дата</td>
+        <td class='field'>Приход/Расход</td>
+        <td class='field'>Тип операции</td>
+        <td class='field'>Контрагент</td>
+        <td class='field'>Сумма</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr ng-repeat="transaction in $ctrl.transactions">
+        <td>
+            <input type="date"  ng-show="transaction.edit"  ng-model="transaction.datetransaction"/> 
+            <span ng-hide="transaction.edit">{{$ctrl.transformationDate(transaction.datetransaction)}}</span>       
+        </td>
+        <td >
+            <span ng-show="transaction.edit"> 
+              <select ng-model="transaction.inout">
+                <option>Приход</option>
+                <option>Расход</option>
+              </select>
+            </span> 
+            <span ng-hide="transaction.edit">{{transaction.inout}}</span> 
+        </td>
+        <td>
+            <span ng-show="transaction.edit">
+              <select ng-model="transaction.typeoperation" >
+                <option ng-repeat="operation in $ctrl.operations">{{operation.name}}</option>
+              </select>
+            </span> 
+            <span ng-hide="transaction.edit">{{transaction.typeoperation}}</span> 
+        </td>
+        <td>
+            <span ng-show="transaction.edit" > 
+              <select ng-model="transaction.kontragent" >
+              <option ng-repeat="kontragent in $ctrl.kontragents">{{kontragent.firstname}}</option>
+               
+              </select>
+            </span> 
+            <span ng-hide="transaction.edit">{{transaction.kontragent}}</span> 
+
+        </td>
+        <td>
+            <input size="13" ng-show="transaction.edit"  ng-model="transaction.sum" type="text"/> 
+            <span ng-hide="transaction.edit">{{transaction.sum}}</span>       
+        </td>
+
+        <td>&nbsp;<a href="" ng-click="$ctrl.deleteTransaction(transaction)" ng-hide="$ctrl.hide">
+            <img src="/image/delete_16.png"/ title="Удалить запись">  </a>&nbsp;
+        </td>
+        <td>&nbsp;<a  href="" ng-click="$ctrl.editTransaction(transaction)" ng-hide="$ctrl.hide" >
+            <img src="image/pencil_16.png" title="Редактировать запись" /> </a>&nbsp;
+        </td>
+        <td><a  href="" ng-click="$ctrl.saveTransaction(transaction)" ng-show="transaction.edit" >
+            <img src="image/save_16.png" title="Сохранить запись" /></a>
+        </td>
+    </tr>
+</table>
+<br />
+<a href="" ng-click="$ctrl.addNewJson(1)">Приходы</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="" ng-click="$ctrl.addNewJson(2)">Расходы</a>
+<br />
+<br />
+<a href="" ng-click="$ctrl.addNewTransaction()"><img src="/image/plus_16.png"/ title="Добвить новую запись"> Добавить новую запись</a>
+

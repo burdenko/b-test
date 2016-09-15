@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en" ng-app="kontrAgent">
+  <head>
+    <meta charset="utf-8">
+    <title>A Test Project by Oleg</title>
+    <link rel="stylesheet" href="bootstrap.css" />
+    <link rel="stylesheet" href="agent.css" />
+    <script src="angular/angular.js"></script>
+    <script src="angular/angular-resource.js"></script>
+    <script src="angular/angular-route.js"></script>
+    <script src="angular/angular-cookie.js"></script>
+    <script src="angular/angular-ui-router.js"></script>
+    <script src="agent.module.js"></script>
+    <script src="agent.config.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="core/agent/agent.module.js"></script>
+    <script src="core/agent/agent.service.js"></script>
+    <script src="core/logout/logout.module.js"></script>
+    <script src="core/logout/logout.service.js"></script>
+    <script src="agent-list/agent-list.module.js"></script>
+    <script src="agent-list/agent-list.component.js"></script>
+    <script src="operation-type/operation-type.module.js"></script>
+    <script src="operation-type/operation-type.component.js"></script>
+    <script src="transaction-journal/transaction-journal.module.js"></script>
+    <script src="transaction-journal/transaction-journal.component.js"></script>
+    <script src="login/login.module.js"></script>
+    <script src="login/login.component.js"></script>
+  </head>
+  <body>
+    <div class = "menu"><a ui-sref="agent" ui-sref-active="active">Контрагенты</a></div>
+    <div class = "menu"><a ui-sref="operation" ui-sref-active="active">Типы операций</a></div>
+    <div class = "menu"><a ui-sref="transaction" ui-sref-active="active">Журнал транзакций</a></div>
+    <div class = "menu"><a ui-sref="login" ui-sref-active="active">Login</a></div>
+    <div ui-view></div>
+  </body>
+</html>

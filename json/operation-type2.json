@@ -1,0 +1,28 @@
+[
+  {
+	"idoperation": "6",
+	"name": "Расходы за товар", 
+	"edit":false
+  },
+  {
+	"idoperation": "7",
+	"name": "Другие расходы", 
+	"edit":false
+  },  
+  
+  {
+	"idoperation": "8",
+	"name": "На аммортизацию", 
+	"edit":false
+  }, 
+  {
+	"idoperation": "9",
+	"name": "Расходы нал", 
+	"edit":false
+  }, 
+  {
+	"idoperation": "10",
+	"name": "Расходы безнал", 
+	"edit":false
+  }
+]
